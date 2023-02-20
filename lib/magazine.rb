@@ -3,6 +3,7 @@ require 'pry'
 class Magazine
 
     attr_writer :name, :category
+  
 
     @@allMagazines = []
 
@@ -73,10 +74,13 @@ class Magazine
                authors_arr << item.author
             end
         end
-       number = authors_arr.each { |value| counts[value] += 1 }
+       authors_arr.each { |value| counts[value] += 1 }
        counts.each { |value, count| result << value if count > 2 }
        result
     end
 
 end
 
+mag1 = Magazine.new("vogue","category")
+
+# binding.pry
